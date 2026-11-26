@@ -3,129 +3,139 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0b1020">
-<title>SAHIL VIP PANEL — 1 Minute History</title>
+<meta name="theme-color" content="#10162d">
+<title>Sahil VIP | Demo Dashboard</title>
 <style>
-:root{--bg:#090d18;--card:#121b2e;--card2:#0d1525;--line:#293750;--text:#eaf2ff;--muted:#9aabc4;--cyan:#59e0e7;--purple:#9c83ff;--gold:#e8c979;--green:#66ddb0;--red:#ff879a}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#1a2441 0,#090d18 55%);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-.wrap{max-width:760px;margin:auto;padding:18px 14px 40px}.top{display:flex;align-items:center;gap:14px;margin:8px 0 22px}.logo{width:58px;height:58px;display:grid;place-items:center;border-radius:18px;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#07101d;font-size:22px;font-weight:900}.brand{flex:1}.brand h1{margin:0;font-size:clamp(20px,5vw,28px);letter-spacing:.3px}.brand p{margin:3px 0 0;color:var(--muted)}.status{font-size:12px;color:var(--green);border:1px solid #2c6c5c;border-radius:30px;padding:7px 10px;white-space:nowrap}
-.card{background:linear-gradient(145deg,#141e33,#101729);border:1px solid var(--line);border-radius:24px;padding:20px;margin:16px 0;box-shadow:0 12px 28px #0002}.eyebrow{font-size:12px;letter-spacing:2px;font-weight:800;color:var(--cyan);margin-bottom:9px}.intro h2{font-size:clamp(24px,6vw,36px);line-height:1.15;margin:8px 0 12px}.intro h2 span{color:var(--cyan)}.intro p{color:#b5c3d8;margin:0}.periodlabel{color:#c6d4e9;font-weight:700}.period{font-size:clamp(23px,6vw,38px);font-weight:850;letter-spacing:.5px;word-break:break-word;margin:10px 0}.timerrow{display:flex;align-items:center;justify-content:space-between;gap:10px}.timer{font-size:clamp(35px,9vw,52px);font-weight:900;font-variant-numeric:tabular-nums;color:var(--cyan)}.smallmuted{color:var(--muted);font-size:13px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.stat{background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:14px}.stat strong{display:block;font-size:25px}.stat span{font-size:12px;color:var(--muted)}h3{margin:0 0 16px;font-size:19px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}label{display:block;color:#bdcbe0;font-size:14px;margin-bottom:6px}input,select,textarea{width:100%;padding:14px;background:#0a1120;color:var(--text);border:1px solid #34445e;border-radius:13px;font:inherit;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--cyan)}textarea{min-height:110px;resize:vertical}.btn{border:0;border-radius:13px;padding:13px 17px;font:700 16px inherit;cursor:pointer;color:#07111e;background:linear-gradient(100deg,var(--cyan),#8bdcff);font-weight:800}.btn.secondary{background:#263651;color:var(--text);border:1px solid #405574}.btn.danger{background:#3b2431;color:#ffdce2;border:1px solid #744254}.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.btnrow .btn{flex:1}.help{color:var(--muted);font-size:13px;margin:10px 0 0}.divider{height:1px;background:var(--line);margin:22px 0}.barrow{display:grid;grid-template-columns:22px 1fr 64px;align-items:center;gap:10px;margin:12px 0}.track{height:14px;background:#26344c;border-radius:20px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--purple));border-radius:20px;transition:width .25s}.barval{text-align:right;color:#cbd7e8;font-size:13px;font-variant-numeric:tabular-nums}.note{padding:13px;border:1px solid #685630;background:#2b2418;color:#e4d4a6;border-radius:15px;font-size:13px;margin-top:16px}.historygrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:10px}.resulttile{background:#0b1322;border:1px solid #34445e;border-radius:15px;padding:12px;text-align:center;min-width:0}.resulttile .n{font-size:25px;font-weight:850}.resulttile .p{font-size:11px;color:var(--muted);overflow-wrap:anywhere}.tag{display:inline-block;font-size:11px;border-radius:20px;padding:3px 8px;margin-top:5px;background:#263650;color:#d8e5f7}.empty{color:var(--muted);text-align:center;padding:20px}.footer{text-align:center;color:#7889a4;font-size:12px;padding:10px}
-@media(max-width:430px){.wrap{padding:14px 10px 30px}.card{padding:17px;border-radius:20px}.stats{gap:7px}.stat{padding:11px}.stat strong{font-size:22px}.formgrid{gap:9px}.status{font-size:10px;padding:6px 8px}}
+:root{
+  --bg:#090f20;--panel:#121d36;--panel2:#172544;--line:#2b3c63;
+  --cyan:#42e8d5;--violet:#9b8cff;--text:#edf4ff;--muted:#91a2c4;
+  --gold:#ffd477;--green:#5de0a1;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Inter,system-ui,Arial,sans-serif;color:var(--text)}
+body{
+ background:radial-gradient(circle at 15% 0%,#253b69 0,transparent 34%),
+ radial-gradient(circle at 95% 35%,#25205a 0,transparent 30%),var(--bg);
+}
+.app{max-width:480px;min-height:100vh;margin:auto;padding:16px;display:flex;flex-direction:column;gap:16px}
+header{
+ display:flex;align-items:center;justify-content:space-between;gap:10px;
+ padding:17px 16px;border:1px solid #31466e;border-radius:17px;
+ background:linear-gradient(120deg,rgba(24,43,76,.96),rgba(24,26,66,.96));
+ box-shadow:0 12px 32px #02061180;
+}
+.brand{font-size:17px;font-weight:900;letter-spacing:1.5px;color:var(--cyan);text-transform:uppercase}
+.subbrand{font-size:10px;color:var(--muted);letter-spacing:2px;margin-top:4px}
+.pill{font-size:10px;font-weight:800;letter-spacing:1px;padding:7px 10px;border-radius:30px;
+ color:#12203b;background:var(--gold)}
+.tabs{display:flex;gap:10px}
+.tab{flex:1;border:1px solid var(--line);border-radius:12px;padding:13px 8px;
+ background:#111c34;color:#b9c9e9;font-weight:800;cursor:pointer}
+.tab.active{background:linear-gradient(120deg,var(--cyan),#8a9cff);color:#071629;border:0;
+ box-shadow:0 7px 22px #42e8d544}
+.card{border:1px solid #34486e;border-radius:22px;padding:22px 18px;text-align:center;
+ background:linear-gradient(155deg,rgba(24,39,70,.98),rgba(15,23,46,.98));
+ box-shadow:0 15px 35px #02061180}
+.eyebrow{font-size:11px;letter-spacing:2px;color:var(--muted);font-weight:800}
+.period{font-size:20px;font-weight:900;letter-spacing:2px;margin:8px 0 18px}
+.timer{font-size:58px;line-height:1.1;font-weight:900;letter-spacing:3px;
+ background:linear-gradient(90deg,var(--cyan),#c1c9ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.demo-label{display:inline-block;margin-top:12px;padding:6px 10px;border-radius:20px;
+ color:#ffe1a0;background:#58451c55;border:1px solid #a27d35;font-size:10px;font-weight:800;letter-spacing:1px}
+.display-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.display-box{padding:15px 8px;border:1px solid var(--line);border-radius:15px;background:#0b1429}
+.display-box .name{font-size:10px;letter-spacing:1.5px;color:var(--muted);font-weight:800}
+.display-box .value{font-size:25px;font-weight:900;margin-top:7px;color:var(--violet)}
+.display-box:last-child .value{color:var(--cyan)}
+.history{border:1px solid #304366;border-radius:18px;overflow:hidden;background:#101a31;flex:1;min-height:220px}
+.history-head{display:grid;grid-template-columns:1fr 1.2fr 1fr 1.2fr;gap:4px;
+ padding:14px 10px;background:#1b2a49;color:#b9c9e9;font-size:9px;font-weight:900;letter-spacing:1px;text-align:center}
+.history-row{display:grid;grid-template-columns:1fr 1.2fr 1fr 1.2fr;gap:4px;
+ padding:13px 10px;border-top:1px solid #253655;text-align:center;font-size:11px;color:#dce7fb}
+.history-row span{align-self:center}
+.status{font-size:9px;font-weight:900;color:var(--gold);background:#51421e66;padding:5px 4px;border-radius:8px}
+.empty{padding:28px 12px;text-align:center;color:var(--muted);font-size:12px}
+.actions{display:flex;gap:10px}
+.action{flex:1;border:1px solid var(--line);background:#172544;color:var(--text);
+ padding:12px;border-radius:12px;font-weight:800;cursor:pointer}
+.action.primary{background:linear-gradient(110deg,#42e8d5,#9b8cff);color:#08152a;border:0}
+footer{text-align:center;color:#8293b5;font-size:10px;letter-spacing:1px;padding:5px}
+@media(max-width:360px){.app{padding:11px}.timer{font-size:48px}.brand{font-size:14px}}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header class="top">
-  <div class="logo">SV</div>
-  <div class="brand"><h1>SAHIL VIP PANEL</h1><p>Wingo 1 minute · History tracker</p></div>
-  <div class="status">● OFFLINE DEMO</div>
-</header>
-
-<section class="card intro">
-  <div class="eyebrow">NUMBER · BIG / SMALL · HISTORY</div>
-  <h2>Read the history.<br><span>Understand the patterns.</span></h2>
-  <p>Record past results and review number frequency, BIG/SMALL distribution and recent sequences. This is a history tracker; previous outcomes cannot reliably predict a random next result.</p>
-</section>
-
-<section class="card">
-  <div class="periodlabel">Current 1-minute period (local clock)</div>
-  <div class="period" id="period">—</div>
-  <div class="timerrow"><div class="timer" id="timer">01:00</div><div class="smallmuted">Next minute in</div></div>
-  <div class="stats">
-    <div class="stat"><strong id="total">0</strong><span>RESULTS ADDED</span></div>
-    <div class="stat"><strong id="big">0</strong><span>BIG (5–9)</span></div>
-    <div class="stat"><strong id="small">0</strong><span>SMALL (0–4)</span></div>
+<main class="app">
+ <header>
+  <div>
+   <div class="brand">Powered by Sahil VIP</div>
+   <div class="subbrand">DEMO DASHBOARD</div>
   </div>
-  <p class="help">Period is generated from your device's local date and minute. It may not match a third-party site's official period ID.</p>
-</section>
+  <span class="pill">PREVIEW</span>
+ </header>
 
-<section class="card">
-  <h3>Add previous result</h3>
-  <div class="formgrid">
-    <div><label for="periodInput">Period number (optional)</label><input id="periodInput" placeholder="Auto current period"></div>
-    <div><label for="numberInput">Result (0–9)</label><select id="numberInput"><option value="">Choose</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select></div>
+ <nav class="tabs" aria-label="Demo modes">
+  <button class="tab active" id="tab30" onclick="setMode(30)">WinGo 30S</button>
+  <button class="tab" id="tab60" onclick="setMode(60)">WinGo 1M</button>
+ </nav>
+
+ <section class="card">
+  <div class="eyebrow">DEMO PERIOD</div>
+  <div class="period" id="period">PERIOD: 0001</div>
+  <div class="timer" id="timer">00:30</div>
+  <div class="demo-label">SAMPLE DATA · NOT A REAL RESULT</div>
+  <div class="display-grid">
+   <div class="display-box"><div class="name">SAMPLE FIELD A</div><div class="value">—</div></div>
+   <div class="display-box"><div class="name">SAMPLE FIELD B</div><div class="value">—</div></div>
   </div>
-  <div class="btnrow"><button class="btn" id="addBtn">＋ Add result</button><button class="btn secondary" id="undoBtn">Undo last entry</button></div>
-  <div class="divider"></div>
-  <h3>Add many previous results at once</h3>
-  <label for="bulkInput">Paste numbers separated by commas, spaces or new lines (oldest first)</label>
-  <textarea id="bulkInput" placeholder="Example: 3, 7, 1, 9, 4"></textarea>
-  <button class="btn" id="bulkBtn" style="width:100%;margin-top:12px">＋ Add all pasted results</button>
-  <p class="help">Only digits 0–9 are accepted. Period numbers are assigned sequentially from the first pasted result.</p>
-  <div class="btnrow"><button class="btn secondary" id="exportBtn">Export CSV</button><button class="btn danger" id="clearBtn">Clear history</button></div>
-</section>
+ </section>
 
-<section class="card">
-  <h3>Number frequency</h3><div id="frequency"></div>
-</section>
-<section class="card">
-  <h3>BIG / SMALL distribution</h3><div id="distribution"></div>
-  <div class="note">BIG = 5–9 · SMALL = 0–4. Historical frequency describes only the results entered; it does not indicate what the next result will be.</div>
-</section>
-<section class="card">
-  <h3>Recent history</h3><div class="historygrid" id="history"></div>
-  <div class="footer">Sahil VIP Panel · Offline demo · Entries save on this device</div>
-</section>
-</div>
+ <section class="history">
+  <div class="history-head"><span>PERIOD</span><span>MODE</span><span>VALUE</span><span>STATUS</span></div>
+  <div id="historyRows">
+   <div class="history-row"><span>0001</span><span>30 SEC</span><span>—</span><span class="status">DEMO</span></div>
+   <div class="history-row"><span>0002</span><span>30 SEC</span><span>—</span><span class="status">DEMO</span></div>
+   <div class="history-row"><span>0003</span><span>30 SEC</span><span>—</span><span class="status">DEMO</span></div>
+  </div>
+ </section>
+
+ <div class="actions">
+  <button class="action" onclick="resetDemo()">RESET DEMO</button>
+  <button class="action primary" onclick="addDemoRow()">ADD SAMPLE ROW</button>
+ </div>
+ <footer>POWERED BY SAHIL VIP · UI DEMO ONLY</footer>
+</main>
 <script>
-const STORAGE_KEY="sahil_vip_wingo_1m_results_v1";
-let results=[];
-try{const saved=localStorage.getItem(STORAGE_KEY);if(saved)results=JSON.parse(saved);if(!Array.isArray(results))results=[];}catch(e){results=[];}
-function pad(n,len=2){return String(n).padStart(len,"0");}
-function getPeriod(date=new Date()){
-  const y=date.getFullYear(),m=pad(date.getMonth()+1),d=pad(date.getDate());
-  const minute=date.getHours()*60+date.getMinutes();
-  return `${y}${m}${d}${pad(minute,5)}`;
+let mode=30,remaining=30,period=1;
+const timer=document.getElementById('timer');
+const periodEl=document.getElementById('period');
+const rows=document.getElementById('historyRows');
+function setMode(seconds){
+ mode=seconds; remaining=seconds;
+ document.getElementById('tab30').classList.toggle('active',seconds===30);
+ document.getElementById('tab60').classList.toggle('active',seconds===60);
+ updateTimer();
 }
-function updateClock(){
-  const now=new Date(),remaining=60-now.getSeconds();
-  document.getElementById("period").textContent=getPeriod(now);
-  document.getElementById("timer").textContent=`00:${pad(remaining)}`;
-  if(document.getElementById("periodInput").dataset.autofill!=="false"){
-    document.getElementById("periodInput").value=getPeriod(now);
-  }
+function updateTimer(){
+ timer.textContent='00:'+String(remaining).padStart(2,'0');
+ periodEl.textContent='PERIOD: '+String(period).padStart(4,'0');
 }
-document.getElementById("periodInput").addEventListener("input",e=>e.target.dataset.autofill="false");
-function category(n){return n>=5?"BIG":"SMALL";}
-function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(results));}catch(e){alert("Could not save on this device. Export your history as CSV.");}}
-function addOne(period,n){results.push({period:String(period),number:Number(n),time:new Date().toISOString()});}
-function update(){
-  const total=results.length,big=results.filter(x=>x.number>=5).length,small=total-big;
-  document.getElementById("total").textContent=total;
-  document.getElementById("big").textContent=big;
-  document.getElementById("small").textContent=small;
-  const counts=Array(10).fill(0);results.forEach(x=>{if(Number.isInteger(x.number)&&x.number>=0&&x.number<=9)counts[x.number]++;});
-  document.getElementById("frequency").innerHTML=counts.map((c,n)=>`<div class="barrow"><b>${n}</b><div class="track"><div class="fill" style="width:${total?c/total*100:0}%"></div></div><div class="barval">${c} · ${total?(c/total*100).toFixed(1):"0.0"}%</div></div>`).join("");
-  document.getElementById("distribution").innerHTML=[["BIG",big],["SMALL",small]].map(([name,c])=>`<div class="barrow"><b>${name}</b><div class="track"><div class="fill" style="width:${total?c/total*100:0}%"></div></div><div class="barval">${c} · ${total?(c/total*100).toFixed(1):"0.0"}%</div></div>`).join("");
-  const recent=[...results].reverse().slice(0,60);
-  document.getElementById("history").innerHTML=recent.length?recent.map(x=>`<div class="resulttile"><div class="n">${x.number}</div><div class="tag">${category(x.number)}</div><div class="p">${escapeHTML(x.period)}</div></div>`).join(""):`<div class="empty">No results added yet.</div>`;
-  save();
+setInterval(()=>{
+ remaining--;
+ if(remaining<=0){remaining=mode;period++;}
+ updateTimer();
+},1000);
+function addDemoRow(){
+ const row=document.createElement('div');
+ row.className='history-row';
+ row.innerHTML='<span>'+String(period).padStart(4,'0')+'</span><span>'+mode+' SEC</span><span>—</span><span class="status">DEMO</span>';
+ rows.prepend(row);
+ while(rows.children.length>10) rows.removeChild(rows.lastElementChild);
 }
-function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
-document.getElementById("addBtn").addEventListener("click",()=>{
-  const n=document.getElementById("numberInput").value;
-  if(n===""){alert("Please choose a result from 0 to 9.");return;}
-  const input=document.getElementById("periodInput"),period=input.value.trim()||getPeriod();
-  addOne(period,Number(n));document.getElementById("numberInput").value="";
-  input.dataset.autofill="true";updateClock();update();
-});
-document.getElementById("undoBtn").addEventListener("click",()=>{if(!results.length)return;results.pop();update();});
-document.getElementById("bulkBtn").addEventListener("click",()=>{
-  const raw=document.getElementById("bulkInput").value.trim();if(!raw){alert("Paste some results first.");return;}
-  const tokens=raw.split(/[,\s]+/).filter(Boolean);
-  if(tokens.some(x=>!/^[0-9]$/.test(x))){alert("Only single digits 0–9 are accepted. Use commas, spaces or new lines.");return;}
-  let p=Number(getPeriod().slice(-5));const datePrefix=getPeriod().slice(0,8);
-  tokens.forEach((n,i)=>addOne(datePrefix+pad(p+i,5),Number(n)));
-  document.getElementById("bulkInput").value="";update();
-});
-document.getElementById("clearBtn").addEventListener("click",()=>{if(confirm("Clear all saved results from this device?")){results=[];update();}});
-document.getElementById("exportBtn").addEventListener("click",()=>{
-  const rows=[["period","number","category","recorded_at"],...results.map(x=>[x.period,x.number,category(x.number),x.time||""])];
-  const csv=rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(",")).join("\n");
-  const blob=new Blob([csv],{type:"text/csv;charset=utf-8;"}),url=URL.createObjectURL(blob),a=document.createElement("a");
-  a.href=url;a.download="sahil_vip_wingo_history.csv";a.click();URL.revokeObjectURL(url);
-});
-updateClock();update();setInterval(updateClock,250);
+function resetDemo(){
+ period=1;remaining=mode;rows.innerHTML='';
+ updateTimer();
+}
+updateTimer();
 </script>
 </body>
 </html>
